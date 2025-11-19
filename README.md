@@ -2,57 +2,40 @@
 
 ## 1. Project Overview and Motivation
 
-This project is a simple command-line utility developed in **Python** to help individuals, particularly students, track their personal income and expenses. It falls under the **Finance & Banking** and **Productivity & Automation** theme.
+This project is a command-line utility developed in **Python** to help individuals, particularly students, track their personal income and expenses. It falls under the **Finance & Banking** and **Productivity & Automation** theme.
 
 ### Problem Solved
-The core problem addressed is the lack of **financial visibility**. Users often spend money without knowing their net balance or where the majority of their funds are going. This application solves this by providing a clear, persistent system for logging transactions and generating immediate category-based summaries.
+The core problem addressed is the lack of **financial visibility** and **control**. The application provides a clear, persistent system for logging transactions and generating immediate, category-based summaries, allowing users to monitor their net financial standing.
 
 ### Core Concepts Applied (Fundamentals in Programming)
 The solution was designed using the following concepts learned in the course:
 * **Data Structures:** Using **Lists** to manage the transaction history and **Dictionaries** to structure individual transactions and calculate category totals.
-* **File Handling (I/O):** Reading data from and writing data to the persistent file (`transactions.txt`).
-* **Modular Programming:** Breaking the solution into clear, single-purpose functions (`load_transactions`, `view_summary`, etc.).
-* **Control Flow:** Implementation of the `while True` loop for the main menu and `try-except` blocks for robust input validation.
+* **File Handling (I/O):** Reading and writing persistent data to the external file (`transactions.txt`).
+* **Modular Programming:** The solution is broken into specialized functions (`load_transactions`, `add_transaction`, `view_summary`) for clear top-down design.
+* **Control Flow & Validation:** Implemented `while` loops for continuous menu navigation and robust `try-except` blocks for input validation (rejecting negative amounts, non-numeric amounts, and impossible dates).
 
 ---
 
 ## 2. Project Features
 
-The application meets the Minimum Viable Product (MVP) requirements with the following functionalities:
+The application meets all core requirements with the following functionalities:
 
 * **Persistent Data:** Transactions are automatically loaded from and saved to `transactions.txt` upon program start and exit.
 * **Add Transaction:** Allows logging of financial events, categorizing them as Income (I) or Expense (E).
-* **Input Validation:** The system ensures that the user enters valid numerical amounts, preventing program crashes.
-* **Comprehensive Summary:** Calculates the **Net Balance** (Total Income - Total Expense) and provides a detailed breakdown of total spending per category (e.g., Food, Rent).
+* **Robust Input Validation:** Strictly rejects any input that is non-numeric, zero, negative, or an invalid calendar date (e.g., month > 12).
+* **Comprehensive Summary:** Calculates the **Net Balance** (Total Income - Total Expense) and provides a detailed breakdown of total spending per category.
 
 ---
 
 ## 3. Instructions to Run the Project (CRITICAL FOR EVALUATION)
 
-To run the application, follow these steps in your terminal or PowerShell:
+The evaluator must follow these specific steps to clone and execute the project successfully.
 
-1.  **Clone the Repository:**
-    Use the correct username to clone the project.
+1.  **Navigate to Target Directory:**
+    Open the Command Prompt or PowerShell and navigate to the directory where you want the project folder to be created (e.g., your Desktop).
     ```bash
-    git clone [https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git](https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git)
+    cd Desktop
     ```
-2.  **Navigate to the Directory:**
-    ```bash
-    cd Personal-Budget-Tracker-Project
-    ```
-3.  **Run the Python Script:**
-    ```bash
-    python budget_tracker.py
-    ```
-4.  Follow the on-screen menu prompts (1, 2, or 3) to interact with the budget tracker.
----
 
-## 4. Visual Documentation
-
-All required visual proofs have been provided in the dedicated folders:
-
-* **Screenshots:** Located in the **`screenshots/`** directory, demonstrating the menu and the final calculated summary report.
-* **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
-
----
-
+2.  **Clone the Repository:**
+    Run the `git clone
