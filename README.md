@@ -38,4 +38,32 @@ The evaluator must follow these specific steps to clone and execute the project 
     ```
 
 2.  **Clone the Repository:**
-    Run the `git clone
+    Run the `git clone` command using the verified URL to download the entire project.
+    ```bash
+    git clone [https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git](https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git)
+    ```
+
+3.  **Navigate into the Project Folder:**
+    ```bash
+    cd Personal-Budget-Tracker-Project
+    ```
+
+4.  **Execute the Python Script:**
+    Run the main application file.
+    ```bash
+    python budget_tracker.py
+    ```
+
+5.  **Interaction:**
+    Follow the on-screen menu prompts (1, 2, or 3) to interact with the budget tracker.
+
+---
+
+## 4. Visual Documentation
+
+All required visual proofs have been organized into the mandated directories for automated evaluation:
+
+* **Screenshots:** Located in the **`screenshots/`** directory, demonstrating the application's menu, input validation, and final summary report.
+* **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
+
+---
