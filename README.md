@@ -27,13 +27,14 @@ The application meets the Minimum Viable Product (MVP) requirements with the fol
 
 ---
 
-## 3. Instructions to Run the Project (Crucial for Evaluation)
+## 3. Instructions to Run the Project (CRITICAL FOR EVALUATION)
 
 To run the application, follow these steps in your terminal or PowerShell:
 
 1.  **Clone the Repository:**
+    Use the correct username to clone the project.
     ```bash
-    git clone [https://github.com/AviralSahu060/Personal-Budget-Tracker-Project.git](https://github.com/AviralSahu060/Personal-Budget-Tracker-Project.git)
+    git clone [https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git](https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git)
     ```
 2.  **Navigate to the Directory:**
     ```bash
@@ -44,7 +45,6 @@ To run the application, follow these steps in your terminal or PowerShell:
     python budget_tracker.py
     ```
 4.  Follow the on-screen menu prompts (1, 2, or 3) to interact with the budget tracker.
-
 ---
 
 ## 4. Visual Documentation
@@ -55,3 +55,4 @@ All required visual proofs have been provided in the dedicated folders:
 * **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
 
 ---
+
