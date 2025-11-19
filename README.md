@@ -40,7 +40,7 @@ The evaluator must follow these specific steps to clone and execute the project 
 2.  **Clone the Repository:**
     Run the `git clone` command using the verified URL to download the entire project.
     ```bash
-    git clone [https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git](https://github.com/AviralSahu960/Personal-Budget-Tracker-Project.git)
+    git clone 
     ```
 
 3.  **Navigate into the Project Folder:**
@@ -67,3 +67,4 @@ All required visual proofs have been organized into the mandated directories for
 * **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
 
 ---
+
