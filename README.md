@@ -32,7 +32,7 @@ The application meets all core requirements with the following functionalities:
 The evaluator must follow these specific steps to clone and execute the project successfully.
 
 1.  **Navigate to Target Directory:**
-    Open the Command Prompt or PowerShell and navigate to the directory where you want the project folder to be created (e.g., your Desktop).
+    Open the Command Prompt or PowerShell and navigate to the directory where you want the project folder to be created.
     ```bash
     cd Desktop
     ```
@@ -67,6 +67,7 @@ All required visual proofs have been organized into the mandated directories for
 * **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
 
 ---
+
 
 
 
