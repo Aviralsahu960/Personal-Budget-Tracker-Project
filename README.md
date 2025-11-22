@@ -1,4 +1,4 @@
-# 💰 Personal Budget Tracker
+#  Personal Budget Tracker
 
 ## 1. Project Overview and Motivation
 
@@ -67,5 +67,6 @@ All required visual proofs have been organized into the mandated directories for
 * **Screen Recording:** A short video demonstration of the full application cycle (adding data, viewing the report, and saving) is available in the **`recordings/`** directory.
 
 ---
+
 
 
