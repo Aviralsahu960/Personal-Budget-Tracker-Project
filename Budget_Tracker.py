@@ -1,7 +1,6 @@
 import os
 import datetime
 
-# The global list to store all transactions loaded from the file
 transactions = []
 FILE_NAME = 'transactions.txt'
 
@@ -11,7 +10,6 @@ def load_transactions():
     """Reads data from the transactions file and loads it into the global list."""
     loaded_data = []
     
-    # Check if the file exists before trying to read it
     if not os.path.exists(FILE_NAME):
         print("No existing data file found. Starting a new budget.")
         return loaded_data
@@ -19,16 +17,12 @@ def load_transactions():
     try:
         with open(FILE_NAME, 'r') as file:
             for line in file:
-                # Format: date|category|description|type|amount
                 parts = line.strip().split('|')
                 
-                # Basic check for corrupt data
                 if len(parts) == 5:
-                    # Ensure amount is loaded as a positive value (normalize any sign)
                     try:
                         amt = abs(float(parts[4]))
                     except ValueError:
-                        # skip malformed amount lines
                         continue
 
                     transaction = {
@@ -36,7 +30,7 @@ def load_transactions():
                         'category': parts[1],
                         'desc': parts[2],
                         'type': parts[3],
-                        'amount': amt  # Always store positive amount
+                        'amount': amt
                     }
                     loaded_data.append(transaction)
     except Exception as e:
@@ -49,12 +43,11 @@ def save_transactions():
     try:
         with open(FILE_NAME, 'w') as file:
             for t in transactions:
-                # Ensure saved amount is written without any sign (always positive)
                 line = f"{t['date']}|{t['category']}|{t['desc']}|{t['type']}|{abs(t['amount'])}\n"
                 file.write(line)
-        print("✅ Data saved successfully!")
+        print("Data saved successfully!")
     except Exception as e:
-        print(f"❌ Error saving data: {e}")
+        print(f"Error saving data: {e}")
 
 # --- 2. Data Entry Function ---
 
@@ -67,17 +60,15 @@ def add_transaction():
     while True:
         date_str = input("Date (YYYY-MM-DD): ")
         try:
-            # strptime checks for valid format (YYYY-MM-DD) and valid calendar dates (e.g., rejects Feb 30th)
             datetime.datetime.strptime(date_str, '%Y-%m-%d')
-            
-            # Additional check for realistic year range
+
             year = int(date_str.split('-')[0])
             if year < 2000 or year > 2100:
-                 print("⚠️ Please enter a realistic year (2000-2100).")
+                 print("Please enter a realistic year (2000-2100).")
                  continue
             break
         except ValueError:
-            print("🚫 Invalid date: Please use YYYY-MM-DD format (e.g., 2025-01-15) and ensure the date is possible.")
+            print("Invalid date: Please use YYYY-MM-DD format (e.g., 2025-01-15) and ensure the date is possible.")
             
     # 2. Category and Description Inputs
     category = input("Category (e.g., Food, Rent, Income): ")
@@ -94,18 +85,15 @@ def add_transaction():
     while True:
         try:
             amount_input = input("Amount: ")
-            # allow users to type +50 or -50; normalize to positive
             amount = abs(float(amount_input))
             
-            # CRITICAL CHECK: Ensure amount is positive (non-zero)
             if amount == 0:
-                print("❌ Amount cannot be zero. Please enter a positive value.")
-                continue # Forces the user to re-enter the amount
+                print("Amount cannot be zero. Please enter a positive value.")
+                continue 
             
-            # If successful and positive, exit the loop
             break
         except ValueError:
-            print("❌ Invalid input. Please enter a number for the amount.")
+            print("Invalid input. Please enter a number for the amount.")
 
     # 5. Create and Store Transaction
     new_transaction = {
@@ -113,11 +101,11 @@ def add_transaction():
         'category': category,
         'desc': desc,
         'type': t_type,
-        'amount': amount # Guaranteed to be a positive number (no +/− sign stored)
+        'amount': amount
     }
 
     transactions.append(new_transaction)
-    print("✨ Transaction added successfully!")
+    print("Transaction added successfully!")
 
 # --- 3. Calculation and Reporting Function ---
 
@@ -147,15 +135,13 @@ def view_summary():
             else:
                 category_totals[category] = amount
 
-    # Print the report
     print("\n====================================")
-    print("💰 FINANCIAL SUMMARY REPORT")
+    print("FINANCIAL SUMMARY REPORT")
     print(f"Current Net Balance: ${net_balance:,.2f}")
     
     print("------------------------------------")
-    print("📊 Expense Breakdown by Category")
-    
-    # Sort categories alphabetically for a cleaner report
+    print("Expense Breakdown by Category")
+
     for category in sorted(category_totals.keys()):
         total = category_totals[category]
         print(f"- {category:<15}: ${total:,.2f}")
@@ -187,9 +173,8 @@ def main_menu():
             print("Program finished. Thank you!")
             break
         else:
-            print("🚫 Invalid choice. Please try again.")
-
-# --- Program Entry Point ---
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main_menu()
+
